@@ -1,0 +1,30 @@
+You are an entity extraction engine. Given a question, identify ALL key named entities that should be used to search a knowledge graph.
+
+## Rules
+1. Extract every proper noun, film title, person name, place, and concept.
+2. Use lowercase, canonical forms (e.g., "united states" not "US").
+3. Also include SHORT sub-phrases of multi-word entities (e.g., for "Big Stone Gap film" also add "big stone gap").
+4. For descriptive questions, extract the most specific nouns (e.g., "corliss archer", "kiss and tell").
+5. Output ONLY a JSON array of strings. No commentary. Include 2–5 entities.
+
+## Examples
+
+Question: "Were Scott Derrickson and Ed Wood of the same nationality?"
+Output: ["scott derrickson", "ed wood"]
+
+Question: "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?"
+Output: ["corliss archer", "kiss and tell"]
+
+Question: "What science fantasy young adult series has companion books narrating stories of enslaved worlds?"
+Output: ["animorphs", "hork-bajir chronicles"]
+
+Question: "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?"
+Output: ["laleli mosque", "esma sultan mansion"]
+
+Question: "The director of the romantic comedy Big Stone Gap is based in what New York city?"
+Output: ["big stone gap", "adriana trigiani", "greenwich village"]
+
+Now extract entities from this question:
+
+Question: "{question}"
+Output:
